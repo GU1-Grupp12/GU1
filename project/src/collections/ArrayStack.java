@@ -43,6 +43,10 @@ public class ArrayStack<E> {
 		return elements[size-1];
 	}
 	
+	public E getIndex(int index) {
+		return elements[index];
+	}
+	
 	public int getSize() {
 		return size;
 	}
