@@ -2,7 +2,7 @@ package collections;
 
 import java.util.Iterator;
 import java.util.Stack;
-
+//HAJ
 public class ArrayStack<E> {
 	private int size;
 	
