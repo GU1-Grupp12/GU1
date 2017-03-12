@@ -5,16 +5,11 @@ public class Dvd extends Media {
 
 	public Dvd(String id, String tite, int year, String[] actors) {
 		super(id, tite, year);
-		this.actors = actors;
-		
+		this.actors = actors;	
 	}
+	
 	public String[] getActors(){
 		return actors;
 		
 	}
-	
-	
-	
-	
-
 }

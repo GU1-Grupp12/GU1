@@ -1,11 +1,12 @@
 package collections;
 
-public abstract class Media {  
-	private String id,title; 
+public abstract class Media {
+	private String id;
+	private String title;
+	
 	private int year;
 
-
-	public Media( String id, String tite, int year ) { 
+	public Media( String id, String title, int year) { 
 	this.id = id;    
 	this.title = title;
 	this.year = year;	
@@ -19,15 +20,14 @@ public abstract class Media {
 		return year;
 	}
 	public String getTitle(){
-		return title;
-		
+		return title;	
 	}
 
 	public boolean equals( Object obj ) {
 		if(obj instanceof Media) {  
 			Media media = (Media)obj; 
 			return id.equals( media.getId() );  
-			}        
+		}        
 		return false;    
-		} 
 	} 
+} 
