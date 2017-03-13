@@ -11,7 +11,7 @@ public class Hashtable<K, V> {
 	private int size;
 	
 	public Hashtable(int capacity) {
-		table = (Bucket<K, V>[])new Bucket[capacity];
+		table = (Bucket<K, V>[])new Bucket[capacity*4];
 		for(int i = 0; i < table.length; i++) {
 			table[i] = new Bucket<K, V>();
 		}
@@ -104,10 +104,10 @@ public class Hashtable<K, V> {
 	}
 	
 	public String toString() {
-		String tmp = "{";
+		String tmp = "";
 		for(int i = 0; i < table.length; i++) {
-			tmp += (table[i].key + " - " + table[i].value) + ((i < table.length-1) ? ", " : "");
+			tmp += (table[i].key + " - " + table[i].value) + ((i < table.length-1) ? "\n " : "");
 		}
-		return tmp + "}";
+		return tmp;
 	}
 }

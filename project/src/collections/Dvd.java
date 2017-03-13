@@ -10,6 +10,13 @@ public class Dvd extends Media {
 	
 	public String[] getActors(){
 		return actors;
-		
+	}
+	
+	public String toString() {
+		String tmp = "{";
+		tmp += getId() + ", " + getTitle() + ", " + getYear() + ", ";
+		for(int i = 0; i < actors.length; i++)
+			tmp += actors[i] + ((i < actors.length-1) ? ", " : "");
+		return tmp + "}";
 	}
 }

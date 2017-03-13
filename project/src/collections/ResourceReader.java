@@ -21,12 +21,13 @@ public class ResourceReader {
 				l = br.readLine();
 				count += 1;
 			}
-			
+			br.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 		
-		tmp = l.split(";");
+		if(l != null)
+			tmp = l.split(";");
 		
 		return tmp;
 	}

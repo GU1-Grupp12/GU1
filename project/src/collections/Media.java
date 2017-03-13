@@ -7,9 +7,9 @@ public abstract class Media {
 	private int year;
 
 	public Media( String id, String title, int year) { 
-	this.id = id;    
-	this.title = title;
-	this.year = year;	
+		this.id = id;    
+		this.title = title;
+		this.year = year;	
 	} 
 
 	public String getId() {  
