@@ -14,6 +14,20 @@ public class LibraryController {
 	private Hashtable<String, Media> media;
 	private BinarySearchTree<String, User> users;
 	
+	private LogInController logInController = new LogInController();
+	
+	public User getLoggedInUser() {
+		return logInController.getUser();
+	}
+	
+	public User getUser(String key) {
+		return users.get(key);
+	}
+	
+	public Media getMedia(String key) {
+		return media.get(key);
+	}
+	
 	public void loadUsers(String path) {
 		users = new BinarySearchTree<String, User>();
 		String[] values = new String[0];
@@ -68,9 +82,5 @@ public class LibraryController {
 		} catch (IOException e) {
 			System.out.println(e);
 		}
-	}
-	
-	public static void main(String[] args) {
-		new LibraryController().loadUsers("data/Lantagare");
 	}
 }

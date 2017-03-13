@@ -1,5 +1,11 @@
 package library;
 
-public class LogInController {
+import collections.User;
 
+public class LogInController {
+	public User loggedInUser;
+	
+	public User getUser() {
+		return loggedInUser;
+	}
 }

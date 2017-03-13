@@ -5,11 +5,15 @@ public abstract class Media {
 	private String title;
 	
 	private int year;
-
-	public Media( String id, String title, int year) { 
+	
+	public boolean avalible;
+	
+	public Media(String id, String title, int year) { 
 		this.id = id;    
 		this.title = title;
-		this.year = year;	
+		this.year = year;
+		
+		avalible = true;
 	} 
 
 	public String getId() {  
