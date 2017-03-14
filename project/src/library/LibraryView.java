@@ -1,5 +1,7 @@
 package library;
 
+import java.awt.GridLayout;
+
 import javax.swing.JPanel;
 
 public class LibraryView extends JPanel {
