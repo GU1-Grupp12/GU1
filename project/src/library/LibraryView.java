@@ -8,14 +8,9 @@ public class LibraryView extends JPanel {
 	private LogInController logInController = new LogInController(controller);
 	private LogInView logInView = new LogInView(logInController);
 	
-	private JPanel mainView = logInView;
-	
 	public LibraryView(LibraryController controller) {
 		this.controller = controller;
-		this.add(mainView);
-	}
-	
-	public void setMainView(JPanel mainView) {
-		this.mainView = mainView;
+		
+		this.add(logInView);
 	}
 }
