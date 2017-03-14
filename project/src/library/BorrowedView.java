@@ -3,7 +3,7 @@ import java.awt.*;
 import javax.swing.*;
 
 
-public class BorrowedView extends JFrame {
+public class BorrowedView extends JPanel {
 	private BorrowedController controller;
 	
 	private JButton ret = new JButton("Återlämna");

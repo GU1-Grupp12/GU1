@@ -20,7 +20,6 @@ public class LogInController {
 		System.out.println(key);
 		if(libraryController.getUser(key) != null) {
 			loggedInUser = libraryController.getUser(key);
-			view.setVisible(false);
 		}
 		else 
 			loggedInUser = null;
