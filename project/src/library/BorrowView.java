@@ -25,7 +25,7 @@ public class BorrowView extends JPanel {
 		this.controller = controller;
 
 		setLayout(new BorderLayout());
-		lonField.setLayout(new GridLayout(2, 2));
+		lonField.setLayout(new GridLayout(2, 6));
 		btnField.setLayout(new GridLayout(10, 0));
 
 		mId.setPreferredSize(new Dimension(80, mId.getSize().height));
@@ -37,11 +37,12 @@ public class BorrowView extends JPanel {
 
 		sok.setToolTipText("Mata in media-ID");
 		mediaId.setToolTipText("Mata in media -ID");
-
-		lonField.add(sokf);
+		
+		lonField.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		lonField.add(sok);
-		lonField.add(mId);
+		lonField.add(sokf);
 		lonField.add(mediaId);
+		lonField.add(mId);
 
 		this.add(btnField, BorderLayout.EAST);
 		this.add(lonField, BorderLayout.NORTH);
