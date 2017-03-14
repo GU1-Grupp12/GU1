@@ -2,6 +2,8 @@ package library;
 
 import java.io.IOException;
 
+import javax.swing.JPanel;
+
 import collections.ResourceReader;
 import collections.Book;
 import collections.Dvd;
@@ -14,8 +16,23 @@ public class LibraryController {
 	private Hashtable<String, Media> media;
 	private BinarySearchTree<String, User> users;
 	
-	private LogInController logInController = new LogInController();
+	private LogInController logInController = new LogInController(this);
 	
+	private LibraryView view;
+	
+	public LibraryController() {
+		loadUsers("data/Lantagare");
+		loadMedia("data/Media");
+	}
+	
+	public LibraryView getView() {
+		return view;
+	}
+	
+	public void setView(LibraryView view) {
+		this.view = view;
+	}
+
 	public User getLoggedInUser() {
 		return logInController.getUser();
 	}
