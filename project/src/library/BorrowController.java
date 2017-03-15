@@ -15,7 +15,7 @@ public class BorrowController {
 	
 	public void borrow(String key) {
 		System.out.println(libraryController.getMedia(key));
-		logInController.getUser().Borrow(libraryController.getMedia(key));
+		logInController.getUser().borrow(libraryController.getMedia(key));
 		libraryController.getMedia(key).avalible = false;
 	}
 }

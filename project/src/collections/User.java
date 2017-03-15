@@ -28,10 +28,19 @@ public class User {
 		return this.id;
 	}
 
-	public void Borrow(Media media){
-		this.media=media;
+	public void borrow(Media media){
+		borrowedMedia.add(media);
+		System.out.println(getBorrowedList());
 	}
 	
+	public String getBorrowedList() {
+		String tmp = "";
+		
+		for(int i = 0; i < borrowedMedia.size(); i++)
+			tmp += borrowedMedia.get(i).toString() + "\n";
+		
+		return tmp;
+	}
 	
 	public String toString() {
 		return "{" + id + ", " + name + ", " + phoneNumber + "}";
