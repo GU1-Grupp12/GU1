@@ -3,6 +3,10 @@ package library;
 import java.awt.*;
 import javax.swing.*;
 
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class BorrowView extends JPanel {
 	private BorrowController controller;
 
@@ -31,13 +35,19 @@ public class BorrowView extends JPanel {
 		mId.setPreferredSize(new Dimension(80, mId.getSize().height));
 		sokf.setPreferredSize(new Dimension(80, sokf.getSize().height));
 
+		ButtonListener l = new ButtonListener();
+		sokMed.addActionListener(l);
+		lona.addActionListener(l);
+		logout.addActionListener(l);
+		
 		btnField.add(sokMed);
 		btnField.add(lona);
 		btnField.add(logout);
+		
 
 		sok.setToolTipText("Mata in media-ID");
 		mediaId.setToolTipText("Mata in media -ID");
-		
+
 		lonField.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 		lonField.add(sok);
 		lonField.add(sokf);
@@ -48,6 +58,20 @@ public class BorrowView extends JPanel {
 		this.add(lonField, BorderLayout.NORTH);
 		this.add(list, BorderLayout.WEST);
 
+	}
+
+	public class ButtonListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == sokMed) {
+				// skriver det när carl är färdig med controllers
+			}
+			if (e.getSource() == lona) {
+				// skriver det när carl är färdig med controllers
+			}
+			if (e.getSource() == logout) {
+				// skriver det när carl är färdig med controllers
+			}
+		}
 	}
 
 	public static void main(String[] args) {
