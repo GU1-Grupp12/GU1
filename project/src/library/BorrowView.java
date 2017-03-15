@@ -66,23 +66,14 @@ public class BorrowView extends JPanel {
 				// skriver det när carl är färdig med controllers
 			}
 			if (e.getSource() == lona) {
-				// skriver det när carl är färdig med controllers
+				System.out.println(mediaId.getText());
+				if(controller.canBorrow(mediaId.getText())) {
+					controller.borrow(mediaId.getText());
+				}
 			}
 			if (e.getSource() == logout) {
 				// skriver det när carl är färdig med controllers
 			}
 		}
 	}
-
-	public static void main(String[] args) {
-		JFrame frame = new JFrame();
-		BorrowController controller = new BorrowController();
-		BorrowView bucky = new BorrowView(controller);
-		frame.setTitle("Borrow");
-		frame.setSize(600, 400);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(bucky);
-		frame.setVisible(true);
-	}
-
 }

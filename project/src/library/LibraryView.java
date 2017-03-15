@@ -15,7 +15,7 @@ public class LibraryView extends JPanel {
 	private LogInController logInController = new LogInController(controller);
 	private LogInView logInView = new LogInView(logInController);
 	
-	private BorrowController borrowController = new BorrowController();
+	private BorrowController borrowController = new BorrowController(controller, logInController);
 	private BorrowView borrowView = new BorrowView(borrowController);
 	
 	private BorrowedController borrowedController = new BorrowedController();
@@ -27,6 +27,7 @@ public class LibraryView extends JPanel {
 	
 	public LibraryView(LibraryController controller) {
 		controller.setLogInController(logInController);
+		
 		loggedInTabs.add("LÅNA", borrowView);
 		loggedInTabs.add("LÄMNA TILLBAMA", borrowedView);
 		add(loggedInTabs);
