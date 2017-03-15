@@ -16,13 +16,17 @@ public class LibraryController {
 	private Hashtable<String, Media> media;
 	private BinarySearchTree<String, User> users;
 	
-	private LogInController logInController = new LogInController(this);
+	private LogInController logInController;
 	
 	private LibraryView view;
 	
 	public LibraryController() {
 		loadUsers("data/Lantagare");
 		loadMedia("data/Media");
+	}
+	
+	public void setLogInController(LogInController logInController) {
+		this.logInController = logInController;
 	}
 	
 	public LibraryView getView() {

@@ -1,7 +1,11 @@
 package library;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
@@ -19,14 +23,31 @@ public class LibraryView extends JPanel {
 	
 	private JTabbedPane loggedInTabs = new JTabbedPane();
 	
+	private JButton accept = new JButton("Fortästt");
+	
 	public LibraryView(LibraryController controller) {
+		controller.setLogInController(logInController);
 		loggedInTabs.add("LÅNA", borrowView);
 		loggedInTabs.add("LÄMNA TILLBAMA", borrowedView);
 		add(loggedInTabs);
+		ButtonListener l = new ButtonListener();
+		accept.addActionListener(l);
+		logInView.add(accept, BorderLayout.EAST);
 		
 		this.controller = controller;
 		
 		this.add(logInView);
-		//loggedInTabs.setVisible(!logInView.isVisible());
+		loggedInTabs.setVisible(false);
+	}
+	
+	private class ButtonListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource() == accept) {
+				if(controller.getLoggedInUser() != null) {
+					logInView.setVisible(false);
+					loggedInTabs.setVisible(true);
+				}
+			}
+		}
 	}
 }
