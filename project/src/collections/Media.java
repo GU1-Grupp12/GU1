@@ -1,7 +1,7 @@
 package collections;
 /**
  * 
- * Creats a abstakt media class that Book and Dvdonjekts will implement
+ * Creates an abstact media class that Book and Dvd will extend
  * 
  * @author Carl Zetterberg
  *
@@ -54,8 +54,10 @@ public abstract class Media {
 		return title;	
 	}
 	/**
-	 * Compare
+	 * Compare to objects id 
 	 * 
+	 * @param obj the object you want to compare with
+	 * @return true if the id match , else false
 	 */
 
 	public boolean equals( Object obj ) {
