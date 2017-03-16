@@ -5,6 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Class with one method to load data from files
+ * @author tom.leonardsson
+ *
+ */
 public class ResourceReader {
 	/**
 	 * Get the elements on a specifc line in a file at a specif path, split at every ";"
