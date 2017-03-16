@@ -23,18 +23,18 @@ public class BorrowController {
 		libraryController.getMedia(key).avalible = false;
 	}
 	
-	public java.awt.List searchList(String search) {
-		java.awt.List tmp = new java.awt.List();
+	public void searchList(String search, java.awt.List t) {
+		t.removeAll();
 		
 		Iterator iter = libraryController.getMedia().keys();
+		
+		Iterator iterV = libraryController.getMedia().values();
 	
 		while(iter.hasNext()) {
 			String n = iter.next().toString();
 			if(n.contains(search)) {
-				tmp.add(n);
+				t.add(n);
 			}
 		}
-		
-		return tmp;
 	}
 }
