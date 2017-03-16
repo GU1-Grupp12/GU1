@@ -12,7 +12,17 @@ import collections.Media;
 import collections.User;
 import collections.BinarySearchTree;
 
+/**
+ * this is the "main" controller for the whole program. Here is 
+ * pretty much every logic and instance for the program to start
+ * and load the users and the media.
+ * @author Tom Leonardsson
+ *
+ */
 public class LibraryController {
+	/**
+	 * instance variables.
+	 */
 	private Hashtable<String, Media> media;
 	private BinarySearchTree<String, User> users;
 	
@@ -24,30 +34,58 @@ public class LibraryController {
 		loadUsers("data/Lantagare");
 		loadMedia("data/Media");
 	}
-	
+	/**
+	 * this is a set-method for instancing the logInCtroller.
+	 * @param logInController
+	 */
 	public void setLogInController(LogInController logInController) {
 		this.logInController = logInController;
 	}
-	
+	/**
+	 * this is the get-method, upon call this method returns the main view.
+	 * @return view
+	 */
 	public LibraryView getView() {
 		return view;
 	}
-	
+	/**
+	 * a set-method for changing the view if needed.
+	 * @param view
+	 */
 	public void setView(LibraryView view) {
 		this.view = view;
 	}
-	
+	/**
+	 * this is a get-method to return the media of type
+	 * hashtable.
+	 * @return Hashtable
+	 */
 	public Hashtable<String, Media> getMedia() {
 		return media;
 	}
+	/**
+	 * this is a get-method that return the user when called.
+	 * @return user
+	 */
 
 	public User getLoggedInUser() {
 		return logInController.getUser();
 	}
-	
+	/**
+	 * this is a get-method with a key as a parameter. this return the key
+	 * of the user when called upon
+	 * @param key
+	 * @return
+	 */
 	public User getUser(String key) {
 		return users.get(key);
 	}
+	/**
+	 * this a get-method with a key as a parameter. this returns
+	 * the key of the media when called upon
+	 * @param key
+	 * @return
+	 */
 	
 	public Media getMedia(String key) {
 		return media.get(key);

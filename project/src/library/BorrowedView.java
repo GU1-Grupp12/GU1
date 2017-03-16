@@ -1,12 +1,26 @@
 package library;
 
 import java.awt.*;
+
 import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This is the window for the borrow panel, here you choose between all the
+ * medias and then borrow one, after that your borrowed object will be put in
+ * your borrowed list.
+ * 
+ * @author Murtadha Al-asadi
+ *
+ */
+
 public class BorrowedView extends JPanel {
+
+	/**
+	 * instance variables for the program
+	 */
 	private BorrowedController controller;
 
 	private JButton ret = new JButton("Återlämna");
@@ -21,6 +35,13 @@ public class BorrowedView extends JPanel {
 
 	private JLabel mediaId = new JLabel("ID:");
 	private JLabel borrowed = new JLabel("Utlånade:");
+
+	/**
+	 * this is the constructor, here are all the objects for the panel are
+	 * written and drawn
+	 * 
+	 * @param controller
+	 */
 
 	public BorrowedView(BorrowedController controller) {
 		this.controller = controller;
@@ -44,13 +65,9 @@ public class BorrowedView extends JPanel {
 		view.add(borrowed);
 		viewer.add(view);
 		viewer.add(text, BorderLayout.WEST);
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 		add(viewer);
 		add(btnPan, BorderLayout.EAST);
-
 
 		this.add(viewer);
 
@@ -58,21 +75,24 @@ public class BorrowedView extends JPanel {
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
 
-
-		add(viewer);
-//		add(text, BorderLayout.WEST);
-		add(btnPan, BorderLayout.EAST);
-
->>>>>>> origin/master
-		this.add(view, BorderLayout.NORTH);
-		this.add(text, BorderLayout.WEST);
-		this.add(btnPan, BorderLayout.EAST);
-
 	}
+
+	/**
+	 * here are the list of borrowed media. this methid update the 
+	 * list after one borrow is made.
+	 */
 
 	public void setTextToBorrowedList() {
 		text.setText(controller.showList());
 	}
+
+	/**
+	 * this is the inner class for the actionlistener for the buttons to work.
+	 * ever button have an action to do when pressed
+	 * 
+	 * @author Murtadha alasadi
+	 *
+	 */
 
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -82,7 +102,7 @@ public class BorrowedView extends JPanel {
 				System.out.println(controller.showList());
 			}
 			if (e.getSource() == logout) {
-				// skriver det när carl är färdig med controllers
+
 			}
 		}
 	}
