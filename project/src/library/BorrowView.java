@@ -6,6 +6,8 @@ import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 
 public class BorrowView extends JPanel {
 	private BorrowController controller;
@@ -57,14 +59,26 @@ public class BorrowView extends JPanel {
 		this.add(btnField, BorderLayout.EAST);
 		this.add(lonField, BorderLayout.NORTH);
 		this.add(list, BorderLayout.WEST);
-
+		
+		ItemChangeListener itemListerner = new ItemChangeListener();
+		
+		list.addItemListener(itemListerner);
+	}
+	
+	class ItemChangeListener implements ItemListener{
+	    public void itemStateChanged(ItemEvent event) {
+	    	if(event.getSource() == list) {
+	    		mediaId.setText(list.getSelectedItem());
+	    	}
+	    }
 	}
 
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == sokMed) {
-				// skriver det när carl är färdig med controllers
+				controller.searchList(sok.getText(), list);
 			}
+			
 			if (e.getSource() == lona) {
 				System.out.println(mediaId.getText());
 				if(controller.canBorrow(mediaId.getText())) {
