@@ -47,11 +47,26 @@ public class BorrowedView extends JPanel {
 		viewer.add(text, BorderLayout.WEST);
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 		add(viewer);
 //		add(text, BorderLayout.WEST);
 		add(btnPan, BorderLayout.EAST);
 
 
+<<<<<<< HEAD
+=======
+		this.add(view, BorderLayout.NORTH);
+		this.add(text, BorderLayout.WEST);
+		this.add(btnPan, BorderLayout.EAST);
+
+
+		add(viewer);
+//		add(text, BorderLayout.WEST);
+		add(btnPan, BorderLayout.EAST);
+>>>>>>> origin/master
 		this.add(view, BorderLayout.NORTH);
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);

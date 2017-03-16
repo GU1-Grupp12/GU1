@@ -36,6 +36,10 @@ public class LibraryController {
 	public void setView(LibraryView view) {
 		this.view = view;
 	}
+	
+	public Hashtable<String, Media> getMedia() {
+		return media;
+	}
 
 	public User getLoggedInUser() {
 		return logInController.getUser();

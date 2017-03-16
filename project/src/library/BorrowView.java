@@ -57,14 +57,14 @@ public class BorrowView extends JPanel {
 		this.add(btnField, BorderLayout.EAST);
 		this.add(lonField, BorderLayout.NORTH);
 		this.add(list, BorderLayout.WEST);
-
 	}
 
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == sokMed) {
-				// skriver det när carl är färdig med controllers
+				list = controller.searchList(sok.getText());
 			}
+			
 			if (e.getSource() == lona) {
 				System.out.println(mediaId.getText());
 				if(controller.canBorrow(mediaId.getText())) {
