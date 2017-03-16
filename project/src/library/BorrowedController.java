@@ -1,11 +1,6 @@
 package library;
 
 public class BorrowedController {
-<<<<<<< HEAD
-
-	
-	
-=======
 	private LogInController logInController;
 	private LibraryController libraryController;
 	
@@ -26,5 +21,4 @@ public class BorrowedController {
 	public String showList() {
 		return logInController.getUser().getBorrowedList();
 	}
->>>>>>> origin/master
 }
