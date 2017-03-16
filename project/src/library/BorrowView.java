@@ -62,7 +62,7 @@ public class BorrowView extends JPanel {
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == sokMed) {
-				list = controller.searchList(sok.getText());
+				controller.searchList(sok.getText(), list);
 			}
 			
 			if (e.getSource() == lona) {
