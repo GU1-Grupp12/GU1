@@ -5,6 +5,9 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -18,7 +21,7 @@ public class LibraryView extends JPanel {
 	private BorrowController borrowController = new BorrowController(controller, logInController);
 	private BorrowView borrowView = new BorrowView(borrowController);
 	
-	private BorrowedController borrowedController = new BorrowedController();
+	private BorrowedController borrowedController = new BorrowedController(controller, logInController);
 	private BorrowedView borrowedView = new BorrowedView(borrowedController);	
 	
 	private JTabbedPane loggedInTabs = new JTabbedPane();
@@ -39,6 +42,12 @@ public class LibraryView extends JPanel {
 		
 		this.add(logInView);
 		loggedInTabs.setVisible(false);
+		
+		loggedInTabs.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				borrowedView.setTextToBorrowedList();
+			}
+	    });
 	}
 	
 	private class ButtonListener implements ActionListener {
