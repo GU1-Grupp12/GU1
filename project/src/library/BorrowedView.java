@@ -45,28 +45,22 @@ public class BorrowedView extends JPanel {
 		this.add(view, BorderLayout.NORTH);
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
-
 	}
+	
+	public void setTextToBorrowedList() {
+		text.setText(controller.showList());
+	}
+	
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == ret) {
-				// skriver det när carl är färdig med controllers
+				controller.returnMedia(id.getText());
+				text.setText(controller.showList());
+				System.out.println(controller.showList());
 			}
 			if (e.getSource() == logout) {
 				// skriver det när carl är färdig med controllers
 			}
 		}
 	}
-
-	public static void main(String[] args) {
-		JFrame frame = new JFrame();
-		BorrowedController controller = new BorrowedController();
-		BorrowedView bucky = new BorrowedView(controller);
-		frame.setTitle("Borrowed");
-		frame.setSize(600, 400);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(bucky);
-		frame.setVisible(true);
-	}
-
 }
