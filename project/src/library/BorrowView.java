@@ -112,8 +112,7 @@ public class BorrowView extends JPanel {
 			}
 			
 			if (e.getSource() == lona) {
-				System.out.println(mediaId.getText());
-				if(controller.canBorrow(mediaId.getText())) {
+				if(controller.mediaExists(mediaId.getText()) && controller.canBorrow(mediaId.getText())) {
 					controller.borrow(mediaId.getText());
 				}
 			}

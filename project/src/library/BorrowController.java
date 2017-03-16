@@ -47,6 +47,15 @@ public class BorrowController {
 		logInController.getUser().borrow(libraryController.getMedia(key));
 		libraryController.getMedia(key).avalible = false;
 	}
+	
+	/**
+	 * check if media exists
+	 * @return if it exists
+	 */
+	public boolean mediaExists(String key) {
+		return libraryController.getMedia(key) != null;
+	}
+	
 	/**
 	 * this is a search engine for the list of the media. 
 	 * after you type a certain key, and loops the whole list, and delete 
