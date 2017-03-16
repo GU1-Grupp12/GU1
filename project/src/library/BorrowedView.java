@@ -18,7 +18,6 @@ public class BorrowedView extends JPanel {
 	private JPanel btnPan = new JPanel();
 	private JPanel view = new JPanel();
 	private JPanel viewer = new JPanel();
-	
 
 	private JLabel mediaId = new JLabel("ID:");
 	private JLabel borrowed = new JLabel("Utlånade:");
@@ -36,7 +35,7 @@ public class BorrowedView extends JPanel {
 		ButtonListener l = new ButtonListener();
 		ret.addActionListener(l);
 		logout.addActionListener(l);
-		
+
 		btnPan.add(mediaId);
 		btnPan.add(id);
 		btnPan.add(ret);
@@ -46,37 +45,20 @@ public class BorrowedView extends JPanel {
 		viewer.add(view);
 		viewer.add(text, BorderLayout.WEST);
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 		add(viewer);
-//		add(text, BorderLayout.WEST);
 		add(btnPan, BorderLayout.EAST);
 
-
-<<<<<<< HEAD
-=======
-		this.add(view, BorderLayout.NORTH);
-		this.add(text, BorderLayout.WEST);
-		this.add(btnPan, BorderLayout.EAST);
-
-
-		add(viewer);
-//		add(text, BorderLayout.WEST);
-		add(btnPan, BorderLayout.EAST);
->>>>>>> origin/master
+		this.add(viewer);
 		this.add(view, BorderLayout.NORTH);
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
 
 	}
-	
+
 	public void setTextToBorrowedList() {
 		text.setText(controller.showList());
 	}
-	
+
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == ret) {
