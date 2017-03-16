@@ -46,7 +46,7 @@ public class BorrowedView extends JPanel {
 		viewer.add(view);
 		viewer.add(text, BorderLayout.WEST);
 
-<<<<<<< HEAD
+
 
 		add(viewer);
 //		add(text, BorderLayout.WEST);
@@ -57,14 +57,14 @@ public class BorrowedView extends JPanel {
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
 
-=======
+
 		add(viewer);
 //		add(text, BorderLayout.WEST);
 		add(btnPan, BorderLayout.EAST);
 		this.add(view, BorderLayout.NORTH);
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
->>>>>>> origin/master
+
 	}
 	
 	public void setTextToBorrowedList() {
