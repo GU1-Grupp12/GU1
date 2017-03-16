@@ -14,21 +14,30 @@ public class Dvd extends Media {
 	private String[] actors;
 
 	/**
-	 * 
-	 * @param id
-	 * @param tite
-	 * @param year
-	 * @param actors
+	 * Contructor that make a dvd object
+	 * @param id of the object
+	 * @param tite on the object
+	 * @param year the dvd was realesed
+	 * @param actors that stared the dvd
 	 */
 	public Dvd(String id, String tite, int year, String[] actors) {
 		super(id, tite, year);
 		this.actors = actors;	
 	}
 	
+	/**
+	 * Get the actor that stared in the dvd
+	 * 
+	 * @return and array of the actors
+	 */
 	public String[] getActors(){
 		return actors;
 	}
-	
+	/**
+	 * An toString that decsribes the object
+	 * 
+	 * @return a string that describes the object
+	 */
 	public String toString() {
 		String tmp = "{";
 		tmp += getId() + ", " + getTitle() + ", " + getYear() + ", ";
