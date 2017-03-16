@@ -17,6 +17,8 @@ public class BorrowedView extends JPanel {
 
 	private JPanel btnPan = new JPanel();
 	private JPanel view = new JPanel();
+	private JPanel viewer = new JPanel();
+	
 
 	private JLabel mediaId = new JLabel("ID:");
 	private JLabel borrowed = new JLabel("Utlånade:");
@@ -41,10 +43,12 @@ public class BorrowedView extends JPanel {
 		btnPan.add(logout);
 
 		view.add(borrowed);
+		viewer.add(view);
+		viewer.add(text, BorderLayout.WEST);
 
-		this.add(view, BorderLayout.NORTH);
-		this.add(text, BorderLayout.WEST);
-		this.add(btnPan, BorderLayout.EAST);
+		add(viewer);
+//		add(text, BorderLayout.WEST);
+		add(btnPan, BorderLayout.EAST);
 
 	}
 	public class ButtonListener implements ActionListener {
