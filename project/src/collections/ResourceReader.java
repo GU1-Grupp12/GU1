@@ -6,6 +6,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ResourceReader {
+	/**
+	 * Get the elements on a specifc line in a file at a specif path, split at every ";"
+	 * @param path the path to the file
+	 * @param line the line to read
+	 * @return an array of strings that holds every piece of the line
+	 * @throws IOException
+	 */
 	public static String[] getValuesOnLine(String path, int line) throws IOException {
 		String[] tmp = null;
 		String l = "";
