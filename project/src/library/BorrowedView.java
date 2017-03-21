@@ -69,16 +69,12 @@ public class BorrowedView extends JPanel {
 		add(viewer);
 		add(btnPan, BorderLayout.EAST);
 
-<<<<<<< HEAD
-
 		this.add(viewer);
 
 
 		this.add(view, BorderLayout.NORTH);
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
-
-
 
 		add(viewer);
 //		add(text, BorderLayout.WEST);
@@ -89,14 +85,11 @@ public class BorrowedView extends JPanel {
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
 
-
-=======
 		this.add(viewer);
 
 		this.add(view, BorderLayout.NORTH);
 		this.add(text, BorderLayout.WEST);
 		this.add(btnPan, BorderLayout.EAST);
->>>>>>> origin/master
 	}
 
 	/**
