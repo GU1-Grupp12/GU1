@@ -31,6 +31,7 @@ public class LibraryController {
 	private LibraryView view;
 	
 	public LibraryController() {
+		System.out.println(new String("123456").substring(2));
 		loadUsers("data/Lantagare");
 		loadMedia("data/Media");
 	}

@@ -62,7 +62,7 @@ public class BorrowView extends JPanel {
 		
 		btnField.add(sokMed);
 		btnField.add(lona);
-		btnField.add(logout);
+		//btnField.add(logout);
 		
 
 		sok.setToolTipText("Mata in media-ID");
@@ -116,6 +116,7 @@ public class BorrowView extends JPanel {
 					controller.borrow(mediaId.getText());
 				}
 			}
+			
 			if (e.getSource() == logout) {
 			}
 		}

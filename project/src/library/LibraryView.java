@@ -18,36 +18,50 @@ import javax.swing.JTabbedPane;
  *
  */
 public class LibraryView extends JPanel {
-	private LibraryController controller = new LibraryController();
+	private LibraryController controller;
 	
-	private LogInController logInController = new LogInController(controller);
-	private LogInView logInView = new LogInView(logInController);
+	private LogInController logInController;
+	private LogInView logInView;
 	
-	private BorrowController borrowController = new BorrowController(controller, logInController);
-	private BorrowView borrowView = new BorrowView(borrowController);
+	private BorrowController borrowController;
+	private BorrowView borrowView;
 	
-	private BorrowedController borrowedController = new BorrowedController(controller, logInController);
-	private BorrowedView borrowedView = new BorrowedView(borrowedController);	
+	private BorrowedController borrowedController;
+	private BorrowedView borrowedView;	
 	
 	private JTabbedPane loggedInTabs = new JTabbedPane();
 	
 	private JButton accept = new JButton("Fortästt");
+	
+	private JButton logOut = new JButton("Logga Ut");
 	
 	/**
 	 * Create the view and add all components and other views with a specifc controller
 	 * @param controller the specfic controller to control the program with
 	 */
 	public LibraryView(LibraryController controller) {
+		this.controller = controller;
+		
+		logInController = new LogInController(controller);
+		logInView = new LogInView(logInController);
+		
+		borrowController = new BorrowController(controller, logInController);
+		borrowView = new BorrowView(borrowController);
+		
+		borrowedController = new BorrowedController(controller, logInController);
+		borrowedView = new BorrowedView(borrowedController);	
+		
 		controller.setLogInController(logInController);
 		
 		loggedInTabs.add("LÅNA", borrowView);
 		loggedInTabs.add("LÄMNA TILLBAMA", borrowedView);
+		add(logOut);
+		logOut.setVisible(false);
 		add(loggedInTabs);
 		ButtonListener l = new ButtonListener();
+		logOut.addActionListener(l);
 		accept.addActionListener(l);
 		logInView.add(accept, BorderLayout.EAST);
-		
-		this.controller = controller;
 		
 		this.add(logInView);
 		loggedInTabs.setVisible(false);
@@ -78,7 +92,14 @@ public class LibraryView extends JPanel {
 				if(controller.getLoggedInUser() != null) {
 					logInView.setVisible(false);
 					loggedInTabs.setVisible(true);
+					logOut.setVisible(true);
 				}
+			}
+			
+			if(e.getSource() == logOut) {
+				logInView.setVisible(true);
+				loggedInTabs.setVisible(false);
+				logOut.setVisible(false);
 			}
 		}
 	}

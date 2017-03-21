@@ -57,4 +57,11 @@ public class LogInController {
 	public User getUser() {
 		return loggedInUser;
 	}
+	
+	/**
+	 * log out the user
+	 */
+	public void logOut() {
+		loggedInUser = null;
+	}
 }

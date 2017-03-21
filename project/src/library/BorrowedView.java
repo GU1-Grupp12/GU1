@@ -60,7 +60,7 @@ public class BorrowedView extends JPanel {
 		btnPan.add(mediaId);
 		btnPan.add(id);
 		btnPan.add(ret);
-		btnPan.add(logout);
+		//btnPan.add(logout);
 
 		view.add(borrowed);
 		viewer.add(view);
