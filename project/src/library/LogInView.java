@@ -11,6 +11,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * View of the log-in screen
+ * @author tom.leonardsson
+ *
+ */
 public class LogInView extends JPanel {
 	private LogInController controller;
 	
@@ -23,6 +28,10 @@ public class LogInView extends JPanel {
 	private JLabel logInBoxText = new JLabel("ID: ");
 	private JLabel loggedInUserProfile = new JLabel("PROFILE: ");
 	
+	/**
+	 * Create a log-in view and add the components and panels with a specifc controller 
+	 * @param controller the specifc controller
+	 */
 	public LogInView(LogInController controller) {
 		this.controller = controller;
 		setLayout(new BorderLayout());
@@ -37,7 +46,16 @@ public class LogInView extends JPanel {
 		logIn.addActionListener(l);
 	}
 	
+	/**
+	 * ButtonListner
+	 * @author tom.leonardsson
+	 *
+	 */
 	private class ButtonListener implements ActionListener {
+		/**
+		 * Check for when the user presses log-in to check if the input is correct 
+		 * @param e
+		 */
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == logIn) {
 				controller.attemptLogIn(logInId.getText());

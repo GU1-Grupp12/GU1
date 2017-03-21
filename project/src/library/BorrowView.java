@@ -9,7 +9,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+/**
+ * This is the window for the borrow panel, here you choose between all the
+ * medias and then borrow one, after that your borrowed object will be put in
+ * your borrowed list.
+ * 
+ * @author Murtadha Al-asadi
+ *
+ */
 public class BorrowView extends JPanel {
+	/**
+	 * instance variables 
+	 */
 	private BorrowController controller;
 
 	private JTextField mediaId = new JTextField();
@@ -26,6 +37,13 @@ public class BorrowView extends JPanel {
 	private JButton lona = new JButton("Låna");
 	private JButton logout = new JButton("logga ut");
 	private JButton sokMed = new JButton("Sök");
+	
+	/**
+	 * this is the constructor, here are all the objects for the panel are
+	 * written and drawn
+	 * 
+	 * @param controller
+	 */
 
 	public BorrowView(BorrowController controller) {
 		this.controller = controller;
@@ -64,6 +82,12 @@ public class BorrowView extends JPanel {
 		
 		list.addItemListener(itemListerner);
 	}
+	/**
+	 * here are the itemlister for the list that we implement.
+	 * this is for the list to update and after a borrow i done.
+	 * @author Tom Leonardsson
+	 *
+	 */
 	
 	class ItemChangeListener implements ItemListener{
 	    public void itemStateChanged(ItemEvent event) {
@@ -72,6 +96,14 @@ public class BorrowView extends JPanel {
 	    	}
 	    }
 	}
+	
+	/**
+	 * this is the buttonlistner for all the buttons.
+	 * every button have an action to be made when it will
+	 * be pressed.
+	 * @author Murtadha alasadi
+	 *
+	 */
 
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -80,13 +112,11 @@ public class BorrowView extends JPanel {
 			}
 			
 			if (e.getSource() == lona) {
-				System.out.println(mediaId.getText());
-				if(controller.canBorrow(mediaId.getText())) {
+				if(controller.mediaExists(mediaId.getText()) && controller.canBorrow(mediaId.getText())) {
 					controller.borrow(mediaId.getText());
 				}
 			}
 			if (e.getSource() == logout) {
-				// skriver det när carl är färdig med controllers
 			}
 		}
 	}

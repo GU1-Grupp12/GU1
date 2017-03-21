@@ -12,6 +12,11 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+/**
+ * Main view for the program
+ * @author tom.leonardsson
+ *
+ */
 public class LibraryView extends JPanel {
 	private LibraryController controller = new LibraryController();
 	
@@ -28,6 +33,10 @@ public class LibraryView extends JPanel {
 	
 	private JButton accept = new JButton("Fortästt");
 	
+	/**
+	 * Create the view and add all components and other views with a specifc controller
+	 * @param controller the specfic controller to control the program with
+	 */
 	public LibraryView(LibraryController controller) {
 		controller.setLogInController(logInController);
 		
@@ -44,13 +53,26 @@ public class LibraryView extends JPanel {
 		loggedInTabs.setVisible(false);
 		
 		loggedInTabs.addChangeListener(new ChangeListener() {
+			/**
+			 * Listen for when the user swithces tabs and update the JTextArea that shows borrowed media
+			 * @param arg0
+			 */
 			public void stateChanged(ChangeEvent arg0) {
 				borrowedView.setTextToBorrowedList();
 			}
 	    });
 	}
 	
+	/**
+	 * Button listner
+	 * @author tom.leonardsson
+	 *
+	 */
 	private class ButtonListener implements ActionListener {
+		/**
+		 * Check for when the user presses accept after logging in to hide the log in view and show the logged in view
+		 * @param e
+		 */
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == accept) {
 				if(controller.getLoggedInUser() != null) {
