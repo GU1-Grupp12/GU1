@@ -66,7 +66,7 @@ public class BorrowController {
 	public void searchList(String search, java.awt.List t) {
 		t.removeAll();
 		
-		Iterator iter = libraryController.getMedia().keys();
+		Iterator iter = libraryController.getMediaList();
 	
 		while(iter.hasNext()) {
 			String n = iter.next().toString();

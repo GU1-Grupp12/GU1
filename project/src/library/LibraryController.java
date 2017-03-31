@@ -1,6 +1,7 @@
 package library;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import javax.swing.JPanel;
 
@@ -31,7 +32,7 @@ public class LibraryController {
 	private LibraryView view;
 	
 	public LibraryController() {
-		System.out.println(new String("123456").substring(2));
+		System.out.println(new String("3456").substring(2));
 		loadUsers("data/Lantagare");
 		loadMedia("data/Media");
 	}
@@ -42,13 +43,7 @@ public class LibraryController {
 	public void setLogInController(LogInController logInController) {
 		this.logInController = logInController;
 	}
-	/**
-	 * this is the get-method, upon call this method returns the main view.
-	 * @return view
-	 */
-	public LibraryView getView() {
-		return view;
-	}
+
 	/**
 	 * a set-method for changing the view if needed.
 	 * @param view
@@ -56,19 +51,20 @@ public class LibraryController {
 	public void setView(LibraryView view) {
 		this.view = view;
 	}
+	
 	/**
 	 * this is a get-method to return the media of type
 	 * hashtable.
 	 * @return Hashtable
 	 */
-	public Hashtable<String, Media> getMedia() {
-		return media;
+	public Iterator getMediaList() {
+		return media.keys();
 	}
+	
 	/**
 	 * this is a get-method that return the user when called.
 	 * @return user
 	 */
-
 	public User getLoggedInUser() {
 		return logInController.getUser();
 	}
