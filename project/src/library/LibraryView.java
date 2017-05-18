@@ -93,6 +93,7 @@ public class LibraryView extends JPanel {
 					logInView.setVisible(false);
 					loggedInTabs.setVisible(true);
 					logOut.setVisible(true);
+					borrowedView.setTextToBorrowedList();
 				}
 			}
 			

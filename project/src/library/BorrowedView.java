@@ -116,6 +116,7 @@ public class BorrowedView extends JPanel {
 				text.setText(controller.showList());
 				System.out.println(controller.showList());
 			}
+			
 			if (e.getSource() == logout) {
 
 			}

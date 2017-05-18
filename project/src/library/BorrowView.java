@@ -88,7 +88,6 @@ public class BorrowView extends JPanel {
 	 * @author Tom Leonardsson
 	 *
 	 */
-	
 	class ItemChangeListener implements ItemListener{
 	    public void itemStateChanged(ItemEvent event) {
 	    	if(event.getSource() == list) {
@@ -98,13 +97,19 @@ public class BorrowView extends JPanel {
 	}
 	
 	/**
+	 * Pop message telling user that they cant borrow
+	 */
+	public void cantBorrowMessage() {
+		JOptionPane.showMessageDialog(this, "Already borrowed");
+	}
+	
+	/**
 	 * this is the buttonlistner for all the buttons.
 	 * every button have an action to be made when it will
 	 * be pressed.
 	 * @author Murtadha alasadi
 	 *
 	 */
-
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == sokMed) {
@@ -114,6 +119,8 @@ public class BorrowView extends JPanel {
 			if (e.getSource() == lona) {
 				if(controller.mediaExists(mediaId.getText()) && controller.canBorrow(mediaId.getText())) {
 					controller.borrow(mediaId.getText());
+				} else {
+					cantBorrowMessage();
 				}
 			}
 			
